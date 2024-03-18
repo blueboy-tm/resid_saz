@@ -3,6 +3,7 @@ from fastapi.responses import StreamingResponse
 import requests
 from io import BytesIO
 from fastapi import FastAPI, Body
+from uvicorn import run
 
 proxies = {'http': "socks5://localhost:1080",
            "https": "socks5://localhost:1080"}
@@ -122,3 +123,6 @@ async def root(data: dict = Body(...)):
     receipt.base.save(image, format='PNG')
     image.seek(0)
     return StreamingResponse(image, media_type="image/png")
+
+if __name__ == '__main__':
+    run(app=app, host='0.0.0.0')
