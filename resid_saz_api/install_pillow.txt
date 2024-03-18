@@ -1,0 +1,1 @@
+pip install --upgrade Pillow  --global-option="build_ext" --global-option="--enable-raqm"
