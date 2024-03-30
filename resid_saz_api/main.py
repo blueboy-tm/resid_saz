@@ -75,7 +75,7 @@ class Receipt(object):
                        fill=fill, direction="rtl")
 
     def text(self, x, y: int, text: str, font=None, fill=None):
-        self.draw.text((x, y), text, font=font, fill=fill, direction="rtl")
+        self.draw.text((x, y), text, font=font, fill=fill, direction="ltr")
 
     def make(self):
         self.centerText(210, self.receiver, font=self.bold(28), fill="#283130")
